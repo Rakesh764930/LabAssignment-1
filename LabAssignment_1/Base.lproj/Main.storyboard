@@ -23,32 +23,50 @@
                                 </state>
                                 <connections>
                                     <action selector="navigate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pUe-pI-bpZ"/>
+                                    <action selector="navigateFMY:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MRF-w7-cC5"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6HS-kx-8j5">
                                 <rect key="frame" x="8" y="78" width="414" height="784"/>
                             </mapView>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="kgS-0h-dfW">
-                                <rect key="frame" x="320" y="746" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="zoomInOut:" destination="BYZ-38-t0r" eventType="valueChanged" id="UCW-j1-2P9"/>
-                                </connections>
-                            </stepper>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5R-J7-w8D">
-                                <rect key="frame" x="349" y="798" width="59" height="55"/>
+                                <rect key="frame" x="381" y="50" width="26" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="walk" image="walking"/>
+                                <state key="normal" title="walk" image="walk"/>
                                 <connections>
                                     <action selector="walk:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sVy-6u-3gf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvd-rd-SLc">
-                                <rect key="frame" x="234" y="795" width="107" height="67"/>
+                                <rect key="frame" x="350" y="48" width="23" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="car" image="car"/>
                                 <connections>
                                     <action selector="car:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aou-0q-RZO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qk4-Xa-njt">
+                                <rect key="frame" x="339" y="760" width="68" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="locationButton"/>
+                                <connections>
+                                    <action selector="navigateIcon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0fQ-wC-Y5t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z34-TZ-fqY">
+                                <rect key="frame" x="350" y="701" width="50" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="minus"/>
+                                <connections>
+                                    <action selector="zoomInBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sse-by-GD5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvy-ET-zwg">
+                                <rect key="frame" x="350" y="642" width="52" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plus (1)"/>
+                                <connections>
+                                    <action selector="zoomOutBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76m-P2-iUc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,11 +88,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="5.7971014492753632" y="47.544642857142854"/>
         </scene>
     </scenes>
     <resources>
-        <image name="car" width="164" height="123"/>
-        <image name="walking" width="205" height="246"/>
+        <image name="car" width="512" height="512"/>
+        <image name="locationButton" width="67" height="67"/>
+        <image name="minus" width="512" height="512"/>
+        <image name="plus (1)" width="512" height="512"/>
+        <image name="walk" width="512" height="512"/>
     </resources>
 </document>
