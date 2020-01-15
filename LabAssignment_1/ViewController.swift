@@ -68,19 +68,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         annotation.title = "MY Destination"
         annotation.coordinate = destLoc
   
-      
+        
     mapView.addAnnotation(annotation)
         }
     
-   @objc func navigation() {
+    @objc func navigation(transType:MKDirectionsTransportType) {
      let placeMark1=MKPlacemark(coordinate: userLoc)
            let placeMark2=MKPlacemark(coordinate: destLoc)
         let request = MKDirections.Request()
+        
               request.source = MKMapItem( placemark: placeMark1)
               request.destination = MKMapItem(placemark: placeMark2)
     // for alternate routes
               request.requestsAlternateRoutes = true
-    request.transportType = .automobile
+        request.transportType=transType
     
 
               let directions = MKDirections(request: request)
@@ -92,17 +93,42 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                       self.mapView.addOverlay(route.polyline)
                     self.mapView.delegate = self
                       self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                    
                   }
               }
         
     }
-    
-    @IBAction func navigate(_ sender: UIButton) {
-        navigation()
+
+    @IBAction func navigate(_ sender: Any) {
+        navigation(transType: .automobile)
+    }
+
+    @IBAction func zoomInOut(_ sender: UIStepper) {
+        
+   
+        zoomMap(byFactor: 2.0)
+        
+       
+    }
+    func zoomMap(byFactor delta: Double) {
+                    var region: MKCoordinateRegion = self.mapView.region
+                    var span: MKCoordinateSpan = mapView.region.span
+                    span.latitudeDelta *= delta
+                    span.longitudeDelta *= delta
+                    region.span = span
+                    mapView.setRegion(region, animated: true)
+                }
+    @IBAction func car(_ sender: UIButton) {
+        
+        mapView.removeOverlays(mapView.overlays)
+         navigation(transType: .automobile)
+        
+    }
+    @IBAction func walk(_ sender: UIButton) {
+               mapView.removeOverlays(mapView.overlays)
+         navigation(transType: .walking)
     }
     
-    
-
 }
 
 
@@ -111,8 +137,9 @@ extension ViewController : MKMapViewDelegate
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
         renderer.strokeColor = UIColor.blue
-        renderer.lineWidth=4.0
+        renderer.lineWidth=10.0
         return renderer
     }
+    
 
 }

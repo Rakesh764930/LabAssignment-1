@@ -21,16 +21,34 @@
                                 <state key="normal" title="Find My Way">
                                     <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="navigate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pUe-pI-bpZ"/>
+                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6HS-kx-8j5">
-                                <rect key="frame" x="0.0" y="91" width="414" height="784"/>
+                                <rect key="frame" x="8" y="78" width="414" height="784"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAB-Yi-JbT">
-                                <rect key="frame" x="347" y="821" width="67" height="67"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="kgS-0h-dfW">
+                                <rect key="frame" x="320" y="746" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="locationButton"/>
                                 <connections>
-                                    <action selector="navigate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jGS-Yu-tev"/>
+                                    <action selector="zoomInOut:" destination="BYZ-38-t0r" eventType="valueChanged" id="UCW-j1-2P9"/>
+                                </connections>
+                            </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5R-J7-w8D">
+                                <rect key="frame" x="349" y="798" width="59" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="walk" image="walking"/>
+                                <connections>
+                                    <action selector="walk:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sVy-6u-3gf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvd-rd-SLc">
+                                <rect key="frame" x="234" y="795" width="107" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="car" image="car"/>
+                                <connections>
+                                    <action selector="car:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aou-0q-RZO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,6 +74,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="locationButton" width="67" height="67"/>
+        <image name="car" width="164" height="123"/>
+        <image name="walking" width="205" height="246"/>
     </resources>
 </document>
